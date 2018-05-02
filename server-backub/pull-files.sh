@@ -34,7 +34,7 @@ EOF
 ssh acm@brux0796 <<EOF
 cd /opt/openidea/acm/ 
 rm server-backup.tar 
-tar -xf server-backup.tar server-backup
+tar -cf server-backup.tar server-backup
 EOF
 
 scp acm@brux0796:/opt/openidea/acm/server-backup.tar \
