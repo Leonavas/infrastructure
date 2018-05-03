@@ -1,0 +1,2085 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>Customer Data Join</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+        <parameter>
+            <name>acm.tfn.dir.tmp.out</name>
+            <default_value/>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>acm.tfn.dir.tmp.sort</name>
+            <default_value/>
+            <description/>
+        </parameter>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+        <partitionschema>
+          <name>4P</name>
+          <partition>            <id>1</id>
+          </partition>          <partition>            <id>2</id>
+          </partition>          <partition>            <id>3</id>
+          </partition>          <partition>            <id>4</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+        <partitionschema>
+          <name>1000P</name>
+          <partition>            <id>1</id>
+          </partition>          <partition>            <id>2</id>
+          </partition>          <partition>            <id>3</id>
+          </partition>          <partition>            <id>4</id>
+          </partition>          <partition>            <id>5</id>
+          </partition>          <partition>            <id>6</id>
+          </partition>          <partition>            <id>7</id>
+          </partition>          <partition>            <id>8</id>
+          </partition>          <partition>            <id>9</id>
+          </partition>          <partition>            <id>10</id>
+          </partition>          <partition>            <id>11</id>
+          </partition>          <partition>            <id>12</id>
+          </partition>          <partition>            <id>13</id>
+          </partition>          <partition>            <id>14</id>
+          </partition>          <partition>            <id>15</id>
+          </partition>          <partition>            <id>16</id>
+          </partition>          <partition>            <id>17</id>
+          </partition>          <partition>            <id>18</id>
+          </partition>          <partition>            <id>19</id>
+          </partition>          <partition>            <id>20</id>
+          </partition>          <partition>            <id>21</id>
+          </partition>          <partition>            <id>22</id>
+          </partition>          <partition>            <id>23</id>
+          </partition>          <partition>            <id>24</id>
+          </partition>          <partition>            <id>25</id>
+          </partition>          <partition>            <id>26</id>
+          </partition>          <partition>            <id>27</id>
+          </partition>          <partition>            <id>28</id>
+          </partition>          <partition>            <id>29</id>
+          </partition>          <partition>            <id>30</id>
+          </partition>          <partition>            <id>31</id>
+          </partition>          <partition>            <id>32</id>
+          </partition>          <partition>            <id>33</id>
+          </partition>          <partition>            <id>34</id>
+          </partition>          <partition>            <id>35</id>
+          </partition>          <partition>            <id>36</id>
+          </partition>          <partition>            <id>37</id>
+          </partition>          <partition>            <id>38</id>
+          </partition>          <partition>            <id>39</id>
+          </partition>          <partition>            <id>40</id>
+          </partition>          <partition>            <id>41</id>
+          </partition>          <partition>            <id>42</id>
+          </partition>          <partition>            <id>43</id>
+          </partition>          <partition>            <id>44</id>
+          </partition>          <partition>            <id>45</id>
+          </partition>          <partition>            <id>46</id>
+          </partition>          <partition>            <id>47</id>
+          </partition>          <partition>            <id>48</id>
+          </partition>          <partition>            <id>49</id>
+          </partition>          <partition>            <id>50</id>
+          </partition>          <partition>            <id>51</id>
+          </partition>          <partition>            <id>52</id>
+          </partition>          <partition>            <id>53</id>
+          </partition>          <partition>            <id>54</id>
+          </partition>          <partition>            <id>55</id>
+          </partition>          <partition>            <id>56</id>
+          </partition>          <partition>            <id>57</id>
+          </partition>          <partition>            <id>58</id>
+          </partition>          <partition>            <id>59</id>
+          </partition>          <partition>            <id>60</id>
+          </partition>          <partition>            <id>61</id>
+          </partition>          <partition>            <id>62</id>
+          </partition>          <partition>            <id>63</id>
+          </partition>          <partition>            <id>64</id>
+          </partition>          <partition>            <id>65</id>
+          </partition>          <partition>            <id>66</id>
+          </partition>          <partition>            <id>67</id>
+          </partition>          <partition>            <id>68</id>
+          </partition>          <partition>            <id>69</id>
+          </partition>          <partition>            <id>70</id>
+          </partition>          <partition>            <id>71</id>
+          </partition>          <partition>            <id>72</id>
+          </partition>          <partition>            <id>73</id>
+          </partition>          <partition>            <id>74</id>
+          </partition>          <partition>            <id>75</id>
+          </partition>          <partition>            <id>76</id>
+          </partition>          <partition>            <id>77</id>
+          </partition>          <partition>            <id>78</id>
+          </partition>          <partition>            <id>79</id>
+          </partition>          <partition>            <id>80</id>
+          </partition>          <partition>            <id>81</id>
+          </partition>          <partition>            <id>82</id>
+          </partition>          <partition>            <id>83</id>
+          </partition>          <partition>            <id>84</id>
+          </partition>          <partition>            <id>85</id>
+          </partition>          <partition>            <id>86</id>
+          </partition>          <partition>            <id>87</id>
+          </partition>          <partition>            <id>88</id>
+          </partition>          <partition>            <id>89</id>
+          </partition>          <partition>            <id>90</id>
+          </partition>          <partition>            <id>91</id>
+          </partition>          <partition>            <id>92</id>
+          </partition>          <partition>            <id>93</id>
+          </partition>          <partition>            <id>94</id>
+          </partition>          <partition>            <id>95</id>
+          </partition>          <partition>            <id>96</id>
+          </partition>          <partition>            <id>97</id>
+          </partition>          <partition>            <id>98</id>
+          </partition>          <partition>            <id>99</id>
+          </partition>          <partition>            <id>100</id>
+          </partition>          <partition>            <id>101</id>
+          </partition>          <partition>            <id>102</id>
+          </partition>          <partition>            <id>103</id>
+          </partition>          <partition>            <id>104</id>
+          </partition>          <partition>            <id>105</id>
+          </partition>          <partition>            <id>106</id>
+          </partition>          <partition>            <id>107</id>
+          </partition>          <partition>            <id>108</id>
+          </partition>          <partition>            <id>109</id>
+          </partition>          <partition>            <id>110</id>
+          </partition>          <partition>            <id>111</id>
+          </partition>          <partition>            <id>112</id>
+          </partition>          <partition>            <id>113</id>
+          </partition>          <partition>            <id>114</id>
+          </partition>          <partition>            <id>115</id>
+          </partition>          <partition>            <id>116</id>
+          </partition>          <partition>            <id>117</id>
+          </partition>          <partition>            <id>118</id>
+          </partition>          <partition>            <id>119</id>
+          </partition>          <partition>            <id>120</id>
+          </partition>          <partition>            <id>121</id>
+          </partition>          <partition>            <id>122</id>
+          </partition>          <partition>            <id>123</id>
+          </partition>          <partition>            <id>124</id>
+          </partition>          <partition>            <id>125</id>
+          </partition>          <partition>            <id>126</id>
+          </partition>          <partition>            <id>127</id>
+          </partition>          <partition>            <id>128</id>
+          </partition>          <partition>            <id>129</id>
+          </partition>          <partition>            <id>130</id>
+          </partition>          <partition>            <id>131</id>
+          </partition>          <partition>            <id>132</id>
+          </partition>          <partition>            <id>133</id>
+          </partition>          <partition>            <id>134</id>
+          </partition>          <partition>            <id>135</id>
+          </partition>          <partition>            <id>136</id>
+          </partition>          <partition>            <id>137</id>
+          </partition>          <partition>            <id>138</id>
+          </partition>          <partition>            <id>139</id>
+          </partition>          <partition>            <id>140</id>
+          </partition>          <partition>            <id>141</id>
+          </partition>          <partition>            <id>142</id>
+          </partition>          <partition>            <id>143</id>
+          </partition>          <partition>            <id>144</id>
+          </partition>          <partition>            <id>145</id>
+          </partition>          <partition>            <id>146</id>
+          </partition>          <partition>            <id>147</id>
+          </partition>          <partition>            <id>148</id>
+          </partition>          <partition>            <id>149</id>
+          </partition>          <partition>            <id>150</id>
+          </partition>          <partition>            <id>151</id>
+          </partition>          <partition>            <id>152</id>
+          </partition>          <partition>            <id>153</id>
+          </partition>          <partition>            <id>154</id>
+          </partition>          <partition>            <id>155</id>
+          </partition>          <partition>            <id>156</id>
+          </partition>          <partition>            <id>157</id>
+          </partition>          <partition>            <id>158</id>
+          </partition>          <partition>            <id>159</id>
+          </partition>          <partition>            <id>160</id>
+          </partition>          <partition>            <id>161</id>
+          </partition>          <partition>            <id>162</id>
+          </partition>          <partition>            <id>163</id>
+          </partition>          <partition>            <id>164</id>
+          </partition>          <partition>            <id>165</id>
+          </partition>          <partition>            <id>166</id>
+          </partition>          <partition>            <id>167</id>
+          </partition>          <partition>            <id>168</id>
+          </partition>          <partition>            <id>169</id>
+          </partition>          <partition>            <id>170</id>
+          </partition>          <partition>            <id>171</id>
+          </partition>          <partition>            <id>172</id>
+          </partition>          <partition>            <id>173</id>
+          </partition>          <partition>            <id>174</id>
+          </partition>          <partition>            <id>175</id>
+          </partition>          <partition>            <id>176</id>
+          </partition>          <partition>            <id>177</id>
+          </partition>          <partition>            <id>178</id>
+          </partition>          <partition>            <id>179</id>
+          </partition>          <partition>            <id>180</id>
+          </partition>          <partition>            <id>181</id>
+          </partition>          <partition>            <id>182</id>
+          </partition>          <partition>            <id>183</id>
+          </partition>          <partition>            <id>184</id>
+          </partition>          <partition>            <id>185</id>
+          </partition>          <partition>            <id>186</id>
+          </partition>          <partition>            <id>187</id>
+          </partition>          <partition>            <id>188</id>
+          </partition>          <partition>            <id>189</id>
+          </partition>          <partition>            <id>190</id>
+          </partition>          <partition>            <id>191</id>
+          </partition>          <partition>            <id>192</id>
+          </partition>          <partition>            <id>193</id>
+          </partition>          <partition>            <id>194</id>
+          </partition>          <partition>            <id>195</id>
+          </partition>          <partition>            <id>196</id>
+          </partition>          <partition>            <id>197</id>
+          </partition>          <partition>            <id>198</id>
+          </partition>          <partition>            <id>199</id>
+          </partition>          <partition>            <id>200</id>
+          </partition>          <partition>            <id>201</id>
+          </partition>          <partition>            <id>202</id>
+          </partition>          <partition>            <id>203</id>
+          </partition>          <partition>            <id>204</id>
+          </partition>          <partition>            <id>205</id>
+          </partition>          <partition>            <id>206</id>
+          </partition>          <partition>            <id>207</id>
+          </partition>          <partition>            <id>208</id>
+          </partition>          <partition>            <id>209</id>
+          </partition>          <partition>            <id>210</id>
+          </partition>          <partition>            <id>211</id>
+          </partition>          <partition>            <id>212</id>
+          </partition>          <partition>            <id>213</id>
+          </partition>          <partition>            <id>214</id>
+          </partition>          <partition>            <id>215</id>
+          </partition>          <partition>            <id>216</id>
+          </partition>          <partition>            <id>217</id>
+          </partition>          <partition>            <id>218</id>
+          </partition>          <partition>            <id>219</id>
+          </partition>          <partition>            <id>220</id>
+          </partition>          <partition>            <id>221</id>
+          </partition>          <partition>            <id>222</id>
+          </partition>          <partition>            <id>223</id>
+          </partition>          <partition>            <id>224</id>
+          </partition>          <partition>            <id>225</id>
+          </partition>          <partition>            <id>226</id>
+          </partition>          <partition>            <id>227</id>
+          </partition>          <partition>            <id>228</id>
+          </partition>          <partition>            <id>229</id>
+          </partition>          <partition>            <id>230</id>
+          </partition>          <partition>            <id>231</id>
+          </partition>          <partition>            <id>232</id>
+          </partition>          <partition>            <id>233</id>
+          </partition>          <partition>            <id>234</id>
+          </partition>          <partition>            <id>235</id>
+          </partition>          <partition>            <id>236</id>
+          </partition>          <partition>            <id>237</id>
+          </partition>          <partition>            <id>238</id>
+          </partition>          <partition>            <id>239</id>
+          </partition>          <partition>            <id>240</id>
+          </partition>          <partition>            <id>241</id>
+          </partition>          <partition>            <id>242</id>
+          </partition>          <partition>            <id>243</id>
+          </partition>          <partition>            <id>244</id>
+          </partition>          <partition>            <id>245</id>
+          </partition>          <partition>            <id>246</id>
+          </partition>          <partition>            <id>247</id>
+          </partition>          <partition>            <id>248</id>
+          </partition>          <partition>            <id>249</id>
+          </partition>          <partition>            <id>250</id>
+          </partition>          <partition>            <id>251</id>
+          </partition>          <partition>            <id>252</id>
+          </partition>          <partition>            <id>253</id>
+          </partition>          <partition>            <id>254</id>
+          </partition>          <partition>            <id>255</id>
+          </partition>          <partition>            <id>256</id>
+          </partition>          <partition>            <id>257</id>
+          </partition>          <partition>            <id>258</id>
+          </partition>          <partition>            <id>259</id>
+          </partition>          <partition>            <id>260</id>
+          </partition>          <partition>            <id>261</id>
+          </partition>          <partition>            <id>262</id>
+          </partition>          <partition>            <id>263</id>
+          </partition>          <partition>            <id>264</id>
+          </partition>          <partition>            <id>265</id>
+          </partition>          <partition>            <id>266</id>
+          </partition>          <partition>            <id>267</id>
+          </partition>          <partition>            <id>268</id>
+          </partition>          <partition>            <id>269</id>
+          </partition>          <partition>            <id>270</id>
+          </partition>          <partition>            <id>271</id>
+          </partition>          <partition>            <id>272</id>
+          </partition>          <partition>            <id>273</id>
+          </partition>          <partition>            <id>274</id>
+          </partition>          <partition>            <id>275</id>
+          </partition>          <partition>            <id>276</id>
+          </partition>          <partition>            <id>277</id>
+          </partition>          <partition>            <id>278</id>
+          </partition>          <partition>            <id>279</id>
+          </partition>          <partition>            <id>280</id>
+          </partition>          <partition>            <id>281</id>
+          </partition>          <partition>            <id>282</id>
+          </partition>          <partition>            <id>283</id>
+          </partition>          <partition>            <id>284</id>
+          </partition>          <partition>            <id>285</id>
+          </partition>          <partition>            <id>286</id>
+          </partition>          <partition>            <id>287</id>
+          </partition>          <partition>            <id>288</id>
+          </partition>          <partition>            <id>289</id>
+          </partition>          <partition>            <id>290</id>
+          </partition>          <partition>            <id>291</id>
+          </partition>          <partition>            <id>292</id>
+          </partition>          <partition>            <id>293</id>
+          </partition>          <partition>            <id>294</id>
+          </partition>          <partition>            <id>295</id>
+          </partition>          <partition>            <id>296</id>
+          </partition>          <partition>            <id>297</id>
+          </partition>          <partition>            <id>298</id>
+          </partition>          <partition>            <id>299</id>
+          </partition>          <partition>            <id>300</id>
+          </partition>          <partition>            <id>301</id>
+          </partition>          <partition>            <id>302</id>
+          </partition>          <partition>            <id>303</id>
+          </partition>          <partition>            <id>304</id>
+          </partition>          <partition>            <id>305</id>
+          </partition>          <partition>            <id>306</id>
+          </partition>          <partition>            <id>307</id>
+          </partition>          <partition>            <id>308</id>
+          </partition>          <partition>            <id>309</id>
+          </partition>          <partition>            <id>310</id>
+          </partition>          <partition>            <id>311</id>
+          </partition>          <partition>            <id>312</id>
+          </partition>          <partition>            <id>313</id>
+          </partition>          <partition>            <id>314</id>
+          </partition>          <partition>            <id>315</id>
+          </partition>          <partition>            <id>316</id>
+          </partition>          <partition>            <id>317</id>
+          </partition>          <partition>            <id>318</id>
+          </partition>          <partition>            <id>319</id>
+          </partition>          <partition>            <id>320</id>
+          </partition>          <partition>            <id>321</id>
+          </partition>          <partition>            <id>322</id>
+          </partition>          <partition>            <id>323</id>
+          </partition>          <partition>            <id>324</id>
+          </partition>          <partition>            <id>325</id>
+          </partition>          <partition>            <id>326</id>
+          </partition>          <partition>            <id>327</id>
+          </partition>          <partition>            <id>328</id>
+          </partition>          <partition>            <id>329</id>
+          </partition>          <partition>            <id>330</id>
+          </partition>          <partition>            <id>331</id>
+          </partition>          <partition>            <id>332</id>
+          </partition>          <partition>            <id>333</id>
+          </partition>          <partition>            <id>334</id>
+          </partition>          <partition>            <id>335</id>
+          </partition>          <partition>            <id>336</id>
+          </partition>          <partition>            <id>337</id>
+          </partition>          <partition>            <id>338</id>
+          </partition>          <partition>            <id>339</id>
+          </partition>          <partition>            <id>340</id>
+          </partition>          <partition>            <id>341</id>
+          </partition>          <partition>            <id>342</id>
+          </partition>          <partition>            <id>343</id>
+          </partition>          <partition>            <id>344</id>
+          </partition>          <partition>            <id>345</id>
+          </partition>          <partition>            <id>346</id>
+          </partition>          <partition>            <id>347</id>
+          </partition>          <partition>            <id>348</id>
+          </partition>          <partition>            <id>349</id>
+          </partition>          <partition>            <id>350</id>
+          </partition>          <partition>            <id>351</id>
+          </partition>          <partition>            <id>352</id>
+          </partition>          <partition>            <id>353</id>
+          </partition>          <partition>            <id>354</id>
+          </partition>          <partition>            <id>355</id>
+          </partition>          <partition>            <id>356</id>
+          </partition>          <partition>            <id>357</id>
+          </partition>          <partition>            <id>358</id>
+          </partition>          <partition>            <id>359</id>
+          </partition>          <partition>            <id>360</id>
+          </partition>          <partition>            <id>361</id>
+          </partition>          <partition>            <id>362</id>
+          </partition>          <partition>            <id>363</id>
+          </partition>          <partition>            <id>364</id>
+          </partition>          <partition>            <id>365</id>
+          </partition>          <partition>            <id>366</id>
+          </partition>          <partition>            <id>367</id>
+          </partition>          <partition>            <id>368</id>
+          </partition>          <partition>            <id>369</id>
+          </partition>          <partition>            <id>370</id>
+          </partition>          <partition>            <id>371</id>
+          </partition>          <partition>            <id>372</id>
+          </partition>          <partition>            <id>373</id>
+          </partition>          <partition>            <id>374</id>
+          </partition>          <partition>            <id>375</id>
+          </partition>          <partition>            <id>376</id>
+          </partition>          <partition>            <id>377</id>
+          </partition>          <partition>            <id>378</id>
+          </partition>          <partition>            <id>379</id>
+          </partition>          <partition>            <id>380</id>
+          </partition>          <partition>            <id>381</id>
+          </partition>          <partition>            <id>382</id>
+          </partition>          <partition>            <id>383</id>
+          </partition>          <partition>            <id>384</id>
+          </partition>          <partition>            <id>385</id>
+          </partition>          <partition>            <id>386</id>
+          </partition>          <partition>            <id>387</id>
+          </partition>          <partition>            <id>388</id>
+          </partition>          <partition>            <id>389</id>
+          </partition>          <partition>            <id>390</id>
+          </partition>          <partition>            <id>391</id>
+          </partition>          <partition>            <id>392</id>
+          </partition>          <partition>            <id>393</id>
+          </partition>          <partition>            <id>394</id>
+          </partition>          <partition>            <id>395</id>
+          </partition>          <partition>            <id>396</id>
+          </partition>          <partition>            <id>397</id>
+          </partition>          <partition>            <id>398</id>
+          </partition>          <partition>            <id>399</id>
+          </partition>          <partition>            <id>400</id>
+          </partition>          <partition>            <id>401</id>
+          </partition>          <partition>            <id>402</id>
+          </partition>          <partition>            <id>403</id>
+          </partition>          <partition>            <id>404</id>
+          </partition>          <partition>            <id>405</id>
+          </partition>          <partition>            <id>406</id>
+          </partition>          <partition>            <id>407</id>
+          </partition>          <partition>            <id>408</id>
+          </partition>          <partition>            <id>409</id>
+          </partition>          <partition>            <id>410</id>
+          </partition>          <partition>            <id>411</id>
+          </partition>          <partition>            <id>412</id>
+          </partition>          <partition>            <id>413</id>
+          </partition>          <partition>            <id>414</id>
+          </partition>          <partition>            <id>415</id>
+          </partition>          <partition>            <id>416</id>
+          </partition>          <partition>            <id>417</id>
+          </partition>          <partition>            <id>418</id>
+          </partition>          <partition>            <id>419</id>
+          </partition>          <partition>            <id>420</id>
+          </partition>          <partition>            <id>421</id>
+          </partition>          <partition>            <id>422</id>
+          </partition>          <partition>            <id>423</id>
+          </partition>          <partition>            <id>424</id>
+          </partition>          <partition>            <id>425</id>
+          </partition>          <partition>            <id>426</id>
+          </partition>          <partition>            <id>427</id>
+          </partition>          <partition>            <id>428</id>
+          </partition>          <partition>            <id>429</id>
+          </partition>          <partition>            <id>430</id>
+          </partition>          <partition>            <id>431</id>
+          </partition>          <partition>            <id>432</id>
+          </partition>          <partition>            <id>433</id>
+          </partition>          <partition>            <id>434</id>
+          </partition>          <partition>            <id>435</id>
+          </partition>          <partition>            <id>436</id>
+          </partition>          <partition>            <id>437</id>
+          </partition>          <partition>            <id>438</id>
+          </partition>          <partition>            <id>439</id>
+          </partition>          <partition>            <id>440</id>
+          </partition>          <partition>            <id>441</id>
+          </partition>          <partition>            <id>442</id>
+          </partition>          <partition>            <id>443</id>
+          </partition>          <partition>            <id>444</id>
+          </partition>          <partition>            <id>445</id>
+          </partition>          <partition>            <id>446</id>
+          </partition>          <partition>            <id>447</id>
+          </partition>          <partition>            <id>448</id>
+          </partition>          <partition>            <id>449</id>
+          </partition>          <partition>            <id>450</id>
+          </partition>          <partition>            <id>451</id>
+          </partition>          <partition>            <id>452</id>
+          </partition>          <partition>            <id>453</id>
+          </partition>          <partition>            <id>454</id>
+          </partition>          <partition>            <id>455</id>
+          </partition>          <partition>            <id>456</id>
+          </partition>          <partition>            <id>457</id>
+          </partition>          <partition>            <id>458</id>
+          </partition>          <partition>            <id>459</id>
+          </partition>          <partition>            <id>460</id>
+          </partition>          <partition>            <id>461</id>
+          </partition>          <partition>            <id>462</id>
+          </partition>          <partition>            <id>463</id>
+          </partition>          <partition>            <id>464</id>
+          </partition>          <partition>            <id>465</id>
+          </partition>          <partition>            <id>466</id>
+          </partition>          <partition>            <id>467</id>
+          </partition>          <partition>            <id>468</id>
+          </partition>          <partition>            <id>469</id>
+          </partition>          <partition>            <id>470</id>
+          </partition>          <partition>            <id>471</id>
+          </partition>          <partition>            <id>472</id>
+          </partition>          <partition>            <id>473</id>
+          </partition>          <partition>            <id>474</id>
+          </partition>          <partition>            <id>475</id>
+          </partition>          <partition>            <id>476</id>
+          </partition>          <partition>            <id>477</id>
+          </partition>          <partition>            <id>478</id>
+          </partition>          <partition>            <id>479</id>
+          </partition>          <partition>            <id>480</id>
+          </partition>          <partition>            <id>481</id>
+          </partition>          <partition>            <id>482</id>
+          </partition>          <partition>            <id>483</id>
+          </partition>          <partition>            <id>484</id>
+          </partition>          <partition>            <id>485</id>
+          </partition>          <partition>            <id>486</id>
+          </partition>          <partition>            <id>487</id>
+          </partition>          <partition>            <id>488</id>
+          </partition>          <partition>            <id>489</id>
+          </partition>          <partition>            <id>490</id>
+          </partition>          <partition>            <id>491</id>
+          </partition>          <partition>            <id>492</id>
+          </partition>          <partition>            <id>493</id>
+          </partition>          <partition>            <id>494</id>
+          </partition>          <partition>            <id>495</id>
+          </partition>          <partition>            <id>496</id>
+          </partition>          <partition>            <id>497</id>
+          </partition>          <partition>            <id>498</id>
+          </partition>          <partition>            <id>499</id>
+          </partition>          <partition>            <id>500</id>
+          </partition>          <partition>            <id>501</id>
+          </partition>          <partition>            <id>502</id>
+          </partition>          <partition>            <id>503</id>
+          </partition>          <partition>            <id>504</id>
+          </partition>          <partition>            <id>505</id>
+          </partition>          <partition>            <id>506</id>
+          </partition>          <partition>            <id>507</id>
+          </partition>          <partition>            <id>508</id>
+          </partition>          <partition>            <id>509</id>
+          </partition>          <partition>            <id>510</id>
+          </partition>          <partition>            <id>511</id>
+          </partition>          <partition>            <id>512</id>
+          </partition>          <partition>            <id>513</id>
+          </partition>          <partition>            <id>514</id>
+          </partition>          <partition>            <id>515</id>
+          </partition>          <partition>            <id>516</id>
+          </partition>          <partition>            <id>517</id>
+          </partition>          <partition>            <id>518</id>
+          </partition>          <partition>            <id>519</id>
+          </partition>          <partition>            <id>520</id>
+          </partition>          <partition>            <id>521</id>
+          </partition>          <partition>            <id>522</id>
+          </partition>          <partition>            <id>523</id>
+          </partition>          <partition>            <id>524</id>
+          </partition>          <partition>            <id>525</id>
+          </partition>          <partition>            <id>526</id>
+          </partition>          <partition>            <id>527</id>
+          </partition>          <partition>            <id>528</id>
+          </partition>          <partition>            <id>529</id>
+          </partition>          <partition>            <id>530</id>
+          </partition>          <partition>            <id>531</id>
+          </partition>          <partition>            <id>532</id>
+          </partition>          <partition>            <id>533</id>
+          </partition>          <partition>            <id>534</id>
+          </partition>          <partition>            <id>535</id>
+          </partition>          <partition>            <id>536</id>
+          </partition>          <partition>            <id>537</id>
+          </partition>          <partition>            <id>538</id>
+          </partition>          <partition>            <id>539</id>
+          </partition>          <partition>            <id>540</id>
+          </partition>          <partition>            <id>541</id>
+          </partition>          <partition>            <id>542</id>
+          </partition>          <partition>            <id>543</id>
+          </partition>          <partition>            <id>544</id>
+          </partition>          <partition>            <id>545</id>
+          </partition>          <partition>            <id>546</id>
+          </partition>          <partition>            <id>547</id>
+          </partition>          <partition>            <id>548</id>
+          </partition>          <partition>            <id>549</id>
+          </partition>          <partition>            <id>550</id>
+          </partition>          <partition>            <id>551</id>
+          </partition>          <partition>            <id>552</id>
+          </partition>          <partition>            <id>553</id>
+          </partition>          <partition>            <id>554</id>
+          </partition>          <partition>            <id>555</id>
+          </partition>          <partition>            <id>556</id>
+          </partition>          <partition>            <id>557</id>
+          </partition>          <partition>            <id>558</id>
+          </partition>          <partition>            <id>559</id>
+          </partition>          <partition>            <id>560</id>
+          </partition>          <partition>            <id>561</id>
+          </partition>          <partition>            <id>562</id>
+          </partition>          <partition>            <id>563</id>
+          </partition>          <partition>            <id>564</id>
+          </partition>          <partition>            <id>565</id>
+          </partition>          <partition>            <id>566</id>
+          </partition>          <partition>            <id>567</id>
+          </partition>          <partition>            <id>568</id>
+          </partition>          <partition>            <id>569</id>
+          </partition>          <partition>            <id>570</id>
+          </partition>          <partition>            <id>571</id>
+          </partition>          <partition>            <id>572</id>
+          </partition>          <partition>            <id>573</id>
+          </partition>          <partition>            <id>574</id>
+          </partition>          <partition>            <id>575</id>
+          </partition>          <partition>            <id>576</id>
+          </partition>          <partition>            <id>577</id>
+          </partition>          <partition>            <id>578</id>
+          </partition>          <partition>            <id>579</id>
+          </partition>          <partition>            <id>580</id>
+          </partition>          <partition>            <id>581</id>
+          </partition>          <partition>            <id>582</id>
+          </partition>          <partition>            <id>583</id>
+          </partition>          <partition>            <id>584</id>
+          </partition>          <partition>            <id>585</id>
+          </partition>          <partition>            <id>586</id>
+          </partition>          <partition>            <id>587</id>
+          </partition>          <partition>            <id>588</id>
+          </partition>          <partition>            <id>589</id>
+          </partition>          <partition>            <id>590</id>
+          </partition>          <partition>            <id>591</id>
+          </partition>          <partition>            <id>592</id>
+          </partition>          <partition>            <id>593</id>
+          </partition>          <partition>            <id>594</id>
+          </partition>          <partition>            <id>595</id>
+          </partition>          <partition>            <id>596</id>
+          </partition>          <partition>            <id>597</id>
+          </partition>          <partition>            <id>598</id>
+          </partition>          <partition>            <id>599</id>
+          </partition>          <partition>            <id>600</id>
+          </partition>          <partition>            <id>601</id>
+          </partition>          <partition>            <id>602</id>
+          </partition>          <partition>            <id>603</id>
+          </partition>          <partition>            <id>604</id>
+          </partition>          <partition>            <id>605</id>
+          </partition>          <partition>            <id>606</id>
+          </partition>          <partition>            <id>607</id>
+          </partition>          <partition>            <id>608</id>
+          </partition>          <partition>            <id>609</id>
+          </partition>          <partition>            <id>610</id>
+          </partition>          <partition>            <id>611</id>
+          </partition>          <partition>            <id>612</id>
+          </partition>          <partition>            <id>613</id>
+          </partition>          <partition>            <id>614</id>
+          </partition>          <partition>            <id>615</id>
+          </partition>          <partition>            <id>616</id>
+          </partition>          <partition>            <id>617</id>
+          </partition>          <partition>            <id>618</id>
+          </partition>          <partition>            <id>619</id>
+          </partition>          <partition>            <id>620</id>
+          </partition>          <partition>            <id>621</id>
+          </partition>          <partition>            <id>622</id>
+          </partition>          <partition>            <id>623</id>
+          </partition>          <partition>            <id>624</id>
+          </partition>          <partition>            <id>625</id>
+          </partition>          <partition>            <id>626</id>
+          </partition>          <partition>            <id>627</id>
+          </partition>          <partition>            <id>628</id>
+          </partition>          <partition>            <id>629</id>
+          </partition>          <partition>            <id>630</id>
+          </partition>          <partition>            <id>631</id>
+          </partition>          <partition>            <id>632</id>
+          </partition>          <partition>            <id>633</id>
+          </partition>          <partition>            <id>634</id>
+          </partition>          <partition>            <id>635</id>
+          </partition>          <partition>            <id>636</id>
+          </partition>          <partition>            <id>637</id>
+          </partition>          <partition>            <id>638</id>
+          </partition>          <partition>            <id>639</id>
+          </partition>          <partition>            <id>640</id>
+          </partition>          <partition>            <id>641</id>
+          </partition>          <partition>            <id>642</id>
+          </partition>          <partition>            <id>643</id>
+          </partition>          <partition>            <id>644</id>
+          </partition>          <partition>            <id>645</id>
+          </partition>          <partition>            <id>646</id>
+          </partition>          <partition>            <id>647</id>
+          </partition>          <partition>            <id>648</id>
+          </partition>          <partition>            <id>649</id>
+          </partition>          <partition>            <id>650</id>
+          </partition>          <partition>            <id>651</id>
+          </partition>          <partition>            <id>652</id>
+          </partition>          <partition>            <id>653</id>
+          </partition>          <partition>            <id>654</id>
+          </partition>          <partition>            <id>655</id>
+          </partition>          <partition>            <id>656</id>
+          </partition>          <partition>            <id>657</id>
+          </partition>          <partition>            <id>658</id>
+          </partition>          <partition>            <id>659</id>
+          </partition>          <partition>            <id>660</id>
+          </partition>          <partition>            <id>661</id>
+          </partition>          <partition>            <id>662</id>
+          </partition>          <partition>            <id>663</id>
+          </partition>          <partition>            <id>664</id>
+          </partition>          <partition>            <id>665</id>
+          </partition>          <partition>            <id>666</id>
+          </partition>          <partition>            <id>667</id>
+          </partition>          <partition>            <id>668</id>
+          </partition>          <partition>            <id>669</id>
+          </partition>          <partition>            <id>670</id>
+          </partition>          <partition>            <id>671</id>
+          </partition>          <partition>            <id>672</id>
+          </partition>          <partition>            <id>673</id>
+          </partition>          <partition>            <id>674</id>
+          </partition>          <partition>            <id>675</id>
+          </partition>          <partition>            <id>676</id>
+          </partition>          <partition>            <id>677</id>
+          </partition>          <partition>            <id>678</id>
+          </partition>          <partition>            <id>679</id>
+          </partition>          <partition>            <id>680</id>
+          </partition>          <partition>            <id>681</id>
+          </partition>          <partition>            <id>682</id>
+          </partition>          <partition>            <id>683</id>
+          </partition>          <partition>            <id>684</id>
+          </partition>          <partition>            <id>685</id>
+          </partition>          <partition>            <id>686</id>
+          </partition>          <partition>            <id>687</id>
+          </partition>          <partition>            <id>688</id>
+          </partition>          <partition>            <id>689</id>
+          </partition>          <partition>            <id>690</id>
+          </partition>          <partition>            <id>691</id>
+          </partition>          <partition>            <id>692</id>
+          </partition>          <partition>            <id>693</id>
+          </partition>          <partition>            <id>694</id>
+          </partition>          <partition>            <id>695</id>
+          </partition>          <partition>            <id>696</id>
+          </partition>          <partition>            <id>697</id>
+          </partition>          <partition>            <id>698</id>
+          </partition>          <partition>            <id>699</id>
+          </partition>          <partition>            <id>700</id>
+          </partition>          <partition>            <id>701</id>
+          </partition>          <partition>            <id>702</id>
+          </partition>          <partition>            <id>703</id>
+          </partition>          <partition>            <id>704</id>
+          </partition>          <partition>            <id>705</id>
+          </partition>          <partition>            <id>706</id>
+          </partition>          <partition>            <id>707</id>
+          </partition>          <partition>            <id>708</id>
+          </partition>          <partition>            <id>709</id>
+          </partition>          <partition>            <id>710</id>
+          </partition>          <partition>            <id>711</id>
+          </partition>          <partition>            <id>712</id>
+          </partition>          <partition>            <id>713</id>
+          </partition>          <partition>            <id>714</id>
+          </partition>          <partition>            <id>715</id>
+          </partition>          <partition>            <id>716</id>
+          </partition>          <partition>            <id>717</id>
+          </partition>          <partition>            <id>718</id>
+          </partition>          <partition>            <id>719</id>
+          </partition>          <partition>            <id>720</id>
+          </partition>          <partition>            <id>721</id>
+          </partition>          <partition>            <id>722</id>
+          </partition>          <partition>            <id>723</id>
+          </partition>          <partition>            <id>724</id>
+          </partition>          <partition>            <id>725</id>
+          </partition>          <partition>            <id>726</id>
+          </partition>          <partition>            <id>727</id>
+          </partition>          <partition>            <id>728</id>
+          </partition>          <partition>            <id>729</id>
+          </partition>          <partition>            <id>730</id>
+          </partition>          <partition>            <id>731</id>
+          </partition>          <partition>            <id>732</id>
+          </partition>          <partition>            <id>733</id>
+          </partition>          <partition>            <id>734</id>
+          </partition>          <partition>            <id>735</id>
+          </partition>          <partition>            <id>736</id>
+          </partition>          <partition>            <id>737</id>
+          </partition>          <partition>            <id>738</id>
+          </partition>          <partition>            <id>739</id>
+          </partition>          <partition>            <id>740</id>
+          </partition>          <partition>            <id>741</id>
+          </partition>          <partition>            <id>742</id>
+          </partition>          <partition>            <id>743</id>
+          </partition>          <partition>            <id>744</id>
+          </partition>          <partition>            <id>745</id>
+          </partition>          <partition>            <id>746</id>
+          </partition>          <partition>            <id>747</id>
+          </partition>          <partition>            <id>748</id>
+          </partition>          <partition>            <id>749</id>
+          </partition>          <partition>            <id>750</id>
+          </partition>          <partition>            <id>751</id>
+          </partition>          <partition>            <id>752</id>
+          </partition>          <partition>            <id>753</id>
+          </partition>          <partition>            <id>754</id>
+          </partition>          <partition>            <id>755</id>
+          </partition>          <partition>            <id>756</id>
+          </partition>          <partition>            <id>757</id>
+          </partition>          <partition>            <id>758</id>
+          </partition>          <partition>            <id>759</id>
+          </partition>          <partition>            <id>760</id>
+          </partition>          <partition>            <id>761</id>
+          </partition>          <partition>            <id>762</id>
+          </partition>          <partition>            <id>763</id>
+          </partition>          <partition>            <id>764</id>
+          </partition>          <partition>            <id>765</id>
+          </partition>          <partition>            <id>766</id>
+          </partition>          <partition>            <id>767</id>
+          </partition>          <partition>            <id>768</id>
+          </partition>          <partition>            <id>769</id>
+          </partition>          <partition>            <id>770</id>
+          </partition>          <partition>            <id>771</id>
+          </partition>          <partition>            <id>772</id>
+          </partition>          <partition>            <id>773</id>
+          </partition>          <partition>            <id>774</id>
+          </partition>          <partition>            <id>775</id>
+          </partition>          <partition>            <id>776</id>
+          </partition>          <partition>            <id>777</id>
+          </partition>          <partition>            <id>778</id>
+          </partition>          <partition>            <id>779</id>
+          </partition>          <partition>            <id>780</id>
+          </partition>          <partition>            <id>781</id>
+          </partition>          <partition>            <id>782</id>
+          </partition>          <partition>            <id>783</id>
+          </partition>          <partition>            <id>784</id>
+          </partition>          <partition>            <id>785</id>
+          </partition>          <partition>            <id>786</id>
+          </partition>          <partition>            <id>787</id>
+          </partition>          <partition>            <id>788</id>
+          </partition>          <partition>            <id>789</id>
+          </partition>          <partition>            <id>790</id>
+          </partition>          <partition>            <id>791</id>
+          </partition>          <partition>            <id>792</id>
+          </partition>          <partition>            <id>793</id>
+          </partition>          <partition>            <id>794</id>
+          </partition>          <partition>            <id>795</id>
+          </partition>          <partition>            <id>796</id>
+          </partition>          <partition>            <id>797</id>
+          </partition>          <partition>            <id>798</id>
+          </partition>          <partition>            <id>799</id>
+          </partition>          <partition>            <id>800</id>
+          </partition>          <partition>            <id>801</id>
+          </partition>          <partition>            <id>802</id>
+          </partition>          <partition>            <id>803</id>
+          </partition>          <partition>            <id>804</id>
+          </partition>          <partition>            <id>805</id>
+          </partition>          <partition>            <id>806</id>
+          </partition>          <partition>            <id>807</id>
+          </partition>          <partition>            <id>808</id>
+          </partition>          <partition>            <id>809</id>
+          </partition>          <partition>            <id>810</id>
+          </partition>          <partition>            <id>811</id>
+          </partition>          <partition>            <id>812</id>
+          </partition>          <partition>            <id>813</id>
+          </partition>          <partition>            <id>814</id>
+          </partition>          <partition>            <id>815</id>
+          </partition>          <partition>            <id>816</id>
+          </partition>          <partition>            <id>817</id>
+          </partition>          <partition>            <id>818</id>
+          </partition>          <partition>            <id>819</id>
+          </partition>          <partition>            <id>820</id>
+          </partition>          <partition>            <id>821</id>
+          </partition>          <partition>            <id>822</id>
+          </partition>          <partition>            <id>823</id>
+          </partition>          <partition>            <id>824</id>
+          </partition>          <partition>            <id>825</id>
+          </partition>          <partition>            <id>826</id>
+          </partition>          <partition>            <id>827</id>
+          </partition>          <partition>            <id>828</id>
+          </partition>          <partition>            <id>829</id>
+          </partition>          <partition>            <id>830</id>
+          </partition>          <partition>            <id>831</id>
+          </partition>          <partition>            <id>832</id>
+          </partition>          <partition>            <id>833</id>
+          </partition>          <partition>            <id>834</id>
+          </partition>          <partition>            <id>835</id>
+          </partition>          <partition>            <id>836</id>
+          </partition>          <partition>            <id>837</id>
+          </partition>          <partition>            <id>838</id>
+          </partition>          <partition>            <id>839</id>
+          </partition>          <partition>            <id>840</id>
+          </partition>          <partition>            <id>841</id>
+          </partition>          <partition>            <id>842</id>
+          </partition>          <partition>            <id>843</id>
+          </partition>          <partition>            <id>844</id>
+          </partition>          <partition>            <id>845</id>
+          </partition>          <partition>            <id>846</id>
+          </partition>          <partition>            <id>847</id>
+          </partition>          <partition>            <id>848</id>
+          </partition>          <partition>            <id>849</id>
+          </partition>          <partition>            <id>850</id>
+          </partition>          <partition>            <id>851</id>
+          </partition>          <partition>            <id>852</id>
+          </partition>          <partition>            <id>853</id>
+          </partition>          <partition>            <id>854</id>
+          </partition>          <partition>            <id>855</id>
+          </partition>          <partition>            <id>856</id>
+          </partition>          <partition>            <id>857</id>
+          </partition>          <partition>            <id>858</id>
+          </partition>          <partition>            <id>859</id>
+          </partition>          <partition>            <id>860</id>
+          </partition>          <partition>            <id>861</id>
+          </partition>          <partition>            <id>862</id>
+          </partition>          <partition>            <id>863</id>
+          </partition>          <partition>            <id>864</id>
+          </partition>          <partition>            <id>865</id>
+          </partition>          <partition>            <id>866</id>
+          </partition>          <partition>            <id>867</id>
+          </partition>          <partition>            <id>868</id>
+          </partition>          <partition>            <id>869</id>
+          </partition>          <partition>            <id>870</id>
+          </partition>          <partition>            <id>871</id>
+          </partition>          <partition>            <id>872</id>
+          </partition>          <partition>            <id>873</id>
+          </partition>          <partition>            <id>874</id>
+          </partition>          <partition>            <id>875</id>
+          </partition>          <partition>            <id>876</id>
+          </partition>          <partition>            <id>877</id>
+          </partition>          <partition>            <id>878</id>
+          </partition>          <partition>            <id>879</id>
+          </partition>          <partition>            <id>880</id>
+          </partition>          <partition>            <id>881</id>
+          </partition>          <partition>            <id>882</id>
+          </partition>          <partition>            <id>883</id>
+          </partition>          <partition>            <id>884</id>
+          </partition>          <partition>            <id>885</id>
+          </partition>          <partition>            <id>886</id>
+          </partition>          <partition>            <id>887</id>
+          </partition>          <partition>            <id>888</id>
+          </partition>          <partition>            <id>889</id>
+          </partition>          <partition>            <id>890</id>
+          </partition>          <partition>            <id>891</id>
+          </partition>          <partition>            <id>892</id>
+          </partition>          <partition>            <id>893</id>
+          </partition>          <partition>            <id>894</id>
+          </partition>          <partition>            <id>895</id>
+          </partition>          <partition>            <id>896</id>
+          </partition>          <partition>            <id>897</id>
+          </partition>          <partition>            <id>898</id>
+          </partition>          <partition>            <id>899</id>
+          </partition>          <partition>            <id>900</id>
+          </partition>          <partition>            <id>901</id>
+          </partition>          <partition>            <id>902</id>
+          </partition>          <partition>            <id>903</id>
+          </partition>          <partition>            <id>904</id>
+          </partition>          <partition>            <id>905</id>
+          </partition>          <partition>            <id>906</id>
+          </partition>          <partition>            <id>907</id>
+          </partition>          <partition>            <id>908</id>
+          </partition>          <partition>            <id>909</id>
+          </partition>          <partition>            <id>910</id>
+          </partition>          <partition>            <id>911</id>
+          </partition>          <partition>            <id>912</id>
+          </partition>          <partition>            <id>913</id>
+          </partition>          <partition>            <id>914</id>
+          </partition>          <partition>            <id>915</id>
+          </partition>          <partition>            <id>916</id>
+          </partition>          <partition>            <id>917</id>
+          </partition>          <partition>            <id>918</id>
+          </partition>          <partition>            <id>919</id>
+          </partition>          <partition>            <id>920</id>
+          </partition>          <partition>            <id>921</id>
+          </partition>          <partition>            <id>922</id>
+          </partition>          <partition>            <id>923</id>
+          </partition>          <partition>            <id>924</id>
+          </partition>          <partition>            <id>925</id>
+          </partition>          <partition>            <id>926</id>
+          </partition>          <partition>            <id>927</id>
+          </partition>          <partition>            <id>928</id>
+          </partition>          <partition>            <id>929</id>
+          </partition>          <partition>            <id>930</id>
+          </partition>          <partition>            <id>931</id>
+          </partition>          <partition>            <id>932</id>
+          </partition>          <partition>            <id>933</id>
+          </partition>          <partition>            <id>934</id>
+          </partition>          <partition>            <id>935</id>
+          </partition>          <partition>            <id>936</id>
+          </partition>          <partition>            <id>937</id>
+          </partition>          <partition>            <id>938</id>
+          </partition>          <partition>            <id>939</id>
+          </partition>          <partition>            <id>940</id>
+          </partition>          <partition>            <id>941</id>
+          </partition>          <partition>            <id>942</id>
+          </partition>          <partition>            <id>943</id>
+          </partition>          <partition>            <id>944</id>
+          </partition>          <partition>            <id>945</id>
+          </partition>          <partition>            <id>946</id>
+          </partition>          <partition>            <id>947</id>
+          </partition>          <partition>            <id>948</id>
+          </partition>          <partition>            <id>949</id>
+          </partition>          <partition>            <id>950</id>
+          </partition>          <partition>            <id>951</id>
+          </partition>          <partition>            <id>952</id>
+          </partition>          <partition>            <id>953</id>
+          </partition>          <partition>            <id>954</id>
+          </partition>          <partition>            <id>955</id>
+          </partition>          <partition>            <id>956</id>
+          </partition>          <partition>            <id>957</id>
+          </partition>          <partition>            <id>958</id>
+          </partition>          <partition>            <id>959</id>
+          </partition>          <partition>            <id>960</id>
+          </partition>          <partition>            <id>961</id>
+          </partition>          <partition>            <id>962</id>
+          </partition>          <partition>            <id>963</id>
+          </partition>          <partition>            <id>964</id>
+          </partition>          <partition>            <id>965</id>
+          </partition>          <partition>            <id>966</id>
+          </partition>          <partition>            <id>967</id>
+          </partition>          <partition>            <id>968</id>
+          </partition>          <partition>            <id>969</id>
+          </partition>          <partition>            <id>970</id>
+          </partition>          <partition>            <id>971</id>
+          </partition>          <partition>            <id>972</id>
+          </partition>          <partition>            <id>973</id>
+          </partition>          <partition>            <id>974</id>
+          </partition>          <partition>            <id>975</id>
+          </partition>          <partition>            <id>976</id>
+          </partition>          <partition>            <id>977</id>
+          </partition>          <partition>            <id>978</id>
+          </partition>          <partition>            <id>979</id>
+          </partition>          <partition>            <id>980</id>
+          </partition>          <partition>            <id>981</id>
+          </partition>          <partition>            <id>982</id>
+          </partition>          <partition>            <id>983</id>
+          </partition>          <partition>            <id>984</id>
+          </partition>          <partition>            <id>985</id>
+          </partition>          <partition>            <id>986</id>
+          </partition>          <partition>            <id>987</id>
+          </partition>          <partition>            <id>988</id>
+          </partition>          <partition>            <id>989</id>
+          </partition>          <partition>            <id>990</id>
+          </partition>          <partition>            <id>991</id>
+          </partition>          <partition>            <id>992</id>
+          </partition>          <partition>            <id>993</id>
+          </partition>          <partition>            <id>994</id>
+          </partition>          <partition>            <id>995</id>
+          </partition>          <partition>            <id>996</id>
+          </partition>          <partition>            <id>997</id>
+          </partition>          <partition>            <id>998</id>
+          </partition>          <partition>            <id>999</id>
+          </partition>          <partition>            <id>1000</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+        <partitionschema>
+          <name>ntc_split</name>
+          <partition>            <id>p1</id>
+          </partition>          <partition>            <id>p2</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+        <partitionschema>
+          <name>16P</name>
+          <partition>            <id>1</id>
+          </partition>          <partition>            <id>2</id>
+          </partition>          <partition>            <id>3</id>
+          </partition>          <partition>            <id>4</id>
+          </partition>          <partition>            <id>5</id>
+          </partition>          <partition>            <id>6</id>
+          </partition>          <partition>            <id>7</id>
+          </partition>          <partition>            <id>8</id>
+          </partition>          <partition>            <id>9</id>
+          </partition>          <partition>            <id>10</id>
+          </partition>          <partition>            <id>11</id>
+          </partition>          <partition>            <id>12</id>
+          </partition>          <partition>            <id>13</id>
+          </partition>          <partition>            <id>14</id>
+          </partition>          <partition>            <id>15</id>
+          </partition>          <partition>            <id>16</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+        <partitionschema>
+          <name>32P</name>
+          <partition>            <id>1</id>
+          </partition>          <partition>            <id>2</id>
+          </partition>          <partition>            <id>3</id>
+          </partition>          <partition>            <id>4</id>
+          </partition>          <partition>            <id>5</id>
+          </partition>          <partition>            <id>6</id>
+          </partition>          <partition>            <id>7</id>
+          </partition>          <partition>            <id>8</id>
+          </partition>          <partition>            <id>9</id>
+          </partition>          <partition>            <id>10</id>
+          </partition>          <partition>            <id>11</id>
+          </partition>          <partition>            <id>12</id>
+          </partition>          <partition>            <id>13</id>
+          </partition>          <partition>            <id>14</id>
+          </partition>          <partition>            <id>15</id>
+          </partition>          <partition>            <id>16</id>
+          </partition>          <partition>            <id>17</id>
+          </partition>          <partition>            <id>18</id>
+          </partition>          <partition>            <id>19</id>
+          </partition>          <partition>            <id>20</id>
+          </partition>          <partition>            <id>21</id>
+          </partition>          <partition>            <id>22</id>
+          </partition>          <partition>            <id>23</id>
+          </partition>          <partition>            <id>24</id>
+          </partition>          <partition>            <id>25</id>
+          </partition>          <partition>            <id>26</id>
+          </partition>          <partition>            <id>27</id>
+          </partition>          <partition>            <id>28</id>
+          </partition>          <partition>            <id>29</id>
+          </partition>          <partition>            <id>30</id>
+          </partition>          <partition>            <id>31</id>
+          </partition>          <partition>            <id>32</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+        <partitionschema>
+          <name>2P</name>
+          <partition>            <id>1</id>
+          </partition>          <partition>            <id>2</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+        <partitionschema>
+          <name>8P</name>
+          <partition>            <id>1</id>
+          </partition>          <partition>            <id>2</id>
+          </partition>          <partition>            <id>3</id>
+          </partition>          <partition>            <id>4</id>
+          </partition>          <partition>            <id>5</id>
+          </partition>          <partition>            <id>6</id>
+          </partition>          <partition>            <id>7</id>
+          </partition>          <partition>            <id>8</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+        <partitionschema>
+          <name>P_MSISDN</name>
+          <partition>            <id>1</id>
+          </partition>          <partition>            <id>2</id>
+          </partition>          <partition>            <id>3</id>
+          </partition>          <partition>            <id>4</id>
+          </partition>          <partition>            <id>5</id>
+          </partition>          <partition>            <id>6</id>
+          </partition>          <partition>            <id>7</id>
+          </partition>          <partition>            <id>8</id>
+          </partition>          <partition>            <id>9</id>
+          </partition>          <partition>            <id>10</id>
+          </partition>          <partition>            <id>11</id>
+          </partition>          <partition>            <id>12</id>
+          </partition>          <partition>            <id>13</id>
+          </partition>          <partition>            <id>14</id>
+          </partition>          <partition>            <id>15</id>
+          </partition>          <partition>            <id>16</id>
+          </partition>          <partition>            <id>17</id>
+          </partition>          <partition>            <id>18</id>
+          </partition>          <partition>            <id>19</id>
+          </partition>          <partition>            <id>20</id>
+          </partition>          <dynamic>N</dynamic>
+          <partitions_per_slave/>
+        </partitionschema>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2016&#x2f;03&#x2f;15 22&#x3a;17&#x3a;05.488</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2016&#x2f;03&#x2f;15 22&#x3a;17&#x3a;05.488</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <order>
+  <hop> <from>Cust_discovery Sort</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Customer Sort</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort by MSISDN</from><to>Sorted Merge</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Sort by MSISDN</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sorted Merge</from><to>Customer Data Join</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Cust_discovery Sort</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>&#x7c;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>Y</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x24;&#x7b;acm.tfn.dir.tmp.out&#x7d;&#x2f;db&#x2f;cust_discovery-data-sort.txt.gz</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>Y</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>GZip</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>MSISDN</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CUSTOMER_ID</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>REGISTRY_TIME</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <error_ignored>Y</error_ignored>
+    <skip_bad_files>Y</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>Y</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>pt_BR</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>50</xloc>
+      <yloc>350</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Customer Data Join</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name>16P</schema_name>
+           </partitioning>
+    <separator>&#x7c;</separator>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>UNIX</format>
+    <compression>GZip</compression>
+    <encoding>ISO-8859-1</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;acm.tfn.dir.tmp.out&#x7d;&#x2f;db&#x2f;customer-data</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>MSISDN</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>REGISTRY_TIME</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>ID_CUSTOMER</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>PF</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CLIENT_TYPE</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>PLAN_CD</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CLIENT_STATUS</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>BALANCE</name>
+        <type>Number</type>
+        <format>0.&#x23;&#x23;</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>CLIENT_PROVISIONING_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>ACTIVE_END_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>ZB1_END_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>COOLING_START_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>LAST_ACTIVE_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>TECH_SEGMENT</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>OPTION</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>SCORE_ZB</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>UCG_FG</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>SCORE_ACTIVE</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CAMPAIGN_COUNT</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>IEP_CUSTOMER</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>480</xloc>
+      <yloc>200</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Customer Sort</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>&#x7c;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>Y</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>&#x24;&#x7b;acm.tfn.dir.tmp.out&#x7d;&#x2f;db&#x2f;customer-data-sort.txt.gz</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>Y</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>GZip</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>ID_CUSTOMER</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PF</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CLIENT_TYPE</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PLAN_CD</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CLIENT_STATUS</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BALANCE</name>
+        <type>Number</type>
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>2</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CLIENT_PROVISIONING_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ACTIVE_END_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ZB1_END_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>COOLING_START_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LAST_ACTIVE_DATE</name>
+        <type>Date</type>
+        <format>yyyyMMdd</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>TECH_SEGMENT</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>OPTION</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SCORE_ZB</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>UCG_FG</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SCORE_ACTIVE</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CAMPAIGN_COUNT</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>IEP_CUSTOMER</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <error_ignored>Y</error_ignored>
+    <skip_bad_files>Y</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>Y</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>pt_BR</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>50</xloc>
+      <yloc>50</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step1>Customer Sort</step1>
+<step2>Cust_discovery Sort</step2>
+    <keys_1>
+      <key>ID_CUSTOMER</key>
+    </keys_1>
+    <keys_2>
+      <key>CUSTOMER_ID</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>50</xloc>
+      <yloc>200</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort by MSISDN</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>8</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x24;&#x7b;acm.tfn.dir.tmp.sort&#x7d;</directory>
+      <prefix>customer-join-msisdn-sort</prefix>
+      <sort_size>100000</sort_size>
+      <free_memory>10</free_memory>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>MSISDN</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>180</xloc>
+      <yloc>200</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sorted Merge</name>
+    <type>SortedMerge</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>MSISDN</name>
+        <ascending>Y</ascending>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>340</xloc>
+      <yloc>200</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
