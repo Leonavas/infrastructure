@@ -1,0 +1,45 @@
+services:
+  - dnsRecord: stefaniniinspiring.com.br
+    backend: http://febrafar.pec.stefaniniinspiring.com.br/entrefarma
+
+  - dnsRecord: server.bigfort.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:8090
+    path: /up
+
+  - dnsRecord: server.bigfort.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:8089
+    path: /dl
+
+  - dnsRecord: server.entrefarma.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:8090
+    path: /up
+
+  - dnsRecord: server.entrefarma.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:8089
+    path: /dl
+
+  - dnsRecord: server.febrafar.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:8090
+    path: /up
+
+  - dnsRecord: server.febrafar.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:8089
+    path: /dl
+
+  - dnsRecord: server.febrafar.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:9205
+    path: /singleinstance
+
+  - dnsRecord: server.febrafar.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:9205
+    path: /bigfort
+
+  - dnsRecord: server.febrafar.hom.stefaniniinspiring.com.br
+    backend: 127.0.0.1:9205
+    path: /entrefarma
+
+  - dnsRecord: vas.poc.stefaniniinspiring.com.br
+    backend: 127.0.0.1:9204
+
+  - dnsRecord: oi.poc.stefaniniinspiring.com.br
+    backend: 127.0.0.1:9204

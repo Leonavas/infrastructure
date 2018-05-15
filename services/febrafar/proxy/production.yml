@@ -1,0 +1,132 @@
+services:
+  - dnsRecord: stefaniniinspiring.com.br
+    backend: 9043
+  - dnsRecord: farmarcas.eventos.stefaniniinspiring.com.br
+    backend: 9205
+  - dnsRecord: server.farmarcas.stefaniniinspiring.com.br
+    backend: 9206
+  - dnsRecord: server.bigfort.stefaniniinspiring.com.br
+    backend: 9207
+  - dnsRecord: server.entrefarma.stefaniniinspiring.com.br
+    backend: 9207
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /bigfort
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /vida
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /certo
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /farmacem
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /acfarma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /redefarma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /farmaefarma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /superpopular
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /ultrapopular
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /maxipopular
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /conceito
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /cooperfarma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /descontofacil
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /singleinstance
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /atual
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /boafarma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /asfar
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /pixfarma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /novarede
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /redemais
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /megapharma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /multmais
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /drogarede
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /total
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /grupofarma
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /redefarmes
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /farmavale
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /farmagente
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /conviva
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 9207
+    path: /farmavip
+  - dnsRecord: kibana.febrafar.stefaniniinspiring.com.br
+    backend: 9208
+  - dnsRecord: server.vida.stefaniniinspiring.com.br
+    backend: 9202
+  - dnsRecord: bigfort.stefaniniinspiring.com.br
+    backend: 9250
+    path: /bigfort
+  - dnsRecord: entrefarma.stefaniniinspiring.com.br
+    backend: 9250
+    path: /entrefarma
+  - dnsRecord: vida.stefaniniinspiring.com.br
+    backend: 9250
+    path: /vida
+  - dnsRecord: server.bigfort.stefaniniinspiring.com.br
+    backend: 8090
+    path: /up
+  - dnsRecord: server.bigfort.stefaniniinspiring.com.br
+    backend: 8089
+    path: /dl
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 8090
+    path: /up
+  - dnsRecord: server.febrafar.stefaniniinspiring.com.br
+    backend: 8089
+    path: /dl
+  - dnsRecord: server.entrefarma.stefaniniinspiring.com.br
+    backend: 8090
+    path: /up
+  - dnsRecord: server.entrefarma.stefaniniinspiring.com.br
+    backend: 8089
+    path: /dl
