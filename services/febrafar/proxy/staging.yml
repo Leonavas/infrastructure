@@ -1,6 +1,7 @@
 services:
   - dnsRecord: stefaniniinspiring.com.br
-    backend: http://febrafar.pec.stefaniniinspiring.com.br/entrefarma
+    backend: febrafar.pec.stefaniniinspiring.com.br:80
+    path: /entrefarma
 
   - dnsRecord: server.bigfort.hom.stefaniniinspiring.com.br
     backend: 127.0.0.1:8090
